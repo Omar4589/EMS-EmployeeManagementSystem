@@ -1,0 +1,24 @@
+{
+  "name": "ems-employeemanagementsystem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Omar4589/EMS-EmployeeManagementSystem.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Omar4589/EMS-EmployeeManagementSystem/issues"
+  },
+  "homepage": "https://github.com/Omar4589/EMS-EmployeeManagementSystem#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^8.2.4",
+    "mysql2": "^3.2.3"
+  }
+}
