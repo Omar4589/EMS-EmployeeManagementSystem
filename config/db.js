@@ -77,13 +77,47 @@ class Database {
   }
 
   // Method to update an employee's role
-  async updateEmployeeRole(employeeId, newRoleId) {
-    const query = "UPDATE employee SET role_id = ? WHERE id = ?";
+  async updateEmployeeRole(employeeId, newRoleId, managerId) {
+    const query =
+      "UPDATE employee SET role_id = ?, manager_id = ? WHERE id = ?";
     const [result] = await this.connection.query(query, [
       newRoleId,
+      managerId,
       employeeId,
     ]);
     return result;
+  }
+
+  //Method to get Dept by name
+  async getDepartmentIdByName(departmentName) {
+    const query = "SELECT id FROM department WHERE name = ?";
+    const [rows] = await this.connection.query(query, [departmentName]);
+    return rows.length ? rows[0].id : null;
+  }
+
+  //Method to get Employee by name
+  async getEmployeeIdByName(employeeName) {
+    const [firstName, lastName] = employeeName.split(" ");
+    const query =
+      "SELECT id FROM employee WHERE first_name = ? AND last_name = ?";
+    const [rows] = await this.connection.query(query, [firstName, lastName]);
+    return rows.length ? rows[0].id : null;
+  }
+
+  //Method to get Role by name
+  async getRoleIdByName(roleName) {
+    const query = "SELECT id FROM role WHERE title = ?";
+    const [rows] = await this.connection.query(query, [roleName]);
+    return rows.length ? rows[0].id : null;
+  }
+
+  //Method to get Manager by name
+  async getManagerIdByName(managerName) {
+    const [firstName, lastName] = managerName.split(" ");
+    const query =
+      "SELECT id FROM employee WHERE first_name = ? AND last_name = ?";
+    const [rows] = await this.connection.query(query, [firstName, lastName]);
+    return rows.length ? rows[0].id : null;
   }
 }
 
