@@ -8,6 +8,11 @@
 <br>
 This command-line application helps business owners view and manage their company's departments, roles, and employees. By providing an organized interface, it simplifies the process of planning and organizing the business structure. The application uses Node.js, Inquirer, and MySQL to create an efficient and user-friendly content management system for employee data.<br>
 
+A walkthrough video demonstrating the functionality of the application:
+
+https://drive.google.com/file/d/1tkOooLrXIRg9BOheO42rqR_Oc6NWWRDc/view
+
+
 ## Table Of Contents
 
 - [Installation](#installation)
